@@ -61,6 +61,7 @@
       color: #404040;
       padding: 12px 8px 4px;
       font-size: 13px;
+      white-space: pre-wrap;
     }
     .title a:link,
     .title a:visited,
@@ -156,9 +157,7 @@
               </div>
             </div>
             <div class="item-bottom">
-              <div class="comment">
-                <%= movie.comment %>
-              </div>
+              <div class="comment"><%= movie.comment %></div>
             </div>
           </li>
         <% }); %>
