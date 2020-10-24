@@ -1,0 +1,27 @@
+{
+  "name": "douban-movie-calendar",
+  "version": "1.0.0",
+  "description": "豆瓣豆列搜索: https://cse.google.com/cse?cx=013876887682380732982:hgcokny4oxu&hl=zh-CN",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "ejs": "^3.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yes1am/douban-movie-calendar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yes1am/douban-movie-calendar/issues"
+  },
+  "homepage": "https://github.com/yes1am/douban-movie-calendar#readme"
+}
