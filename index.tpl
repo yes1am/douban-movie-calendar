@@ -118,18 +118,27 @@
         <div class="menu-item active">
           <a href="./2019.html">2019</a>
         </div>
-      <% } else{ %>
+      <% } else { %>
         <div class="menu-item">
           <a href="./2019.html">2019</a>
         </div>
       <% } %>
       <% if (year === 2020) { %>
         <div class="menu-item active">
-          <a href="./index.html">2020</a>
+          <a href="./2020.html">2020</a>
         </div>
       <% } else { %>
         <div class="menu-item">
-          <a href="./index.html">2020</a>
+          <a href="./2020.html">2020</a>
+        </div>
+      <% } %>
+      <% if (year === 2021) { %>
+        <div class="menu-item active">
+          <a href="./index.html">2021</a>
+        </div>
+      <% } else { %>
+        <div class="menu-item">
+          <a href="./index.html">2021</a>
         </div>
       <% } %>
     </div>
