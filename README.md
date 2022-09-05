@@ -5,3 +5,4 @@
 2. [2017、2018、2019 日历信息](https://www.douban.com/doulist/122149527/)
 3. [2020 日历信息](https://www.douban.com/doulist/120012363/?start=0&sort=seq&playable=0&sub_type=)
 4. [2021 日历信息](https://www.douban.com/doulist/132007559/)
+5. [2022 日历信息](https://www.douban.com/doulist/147208859/)

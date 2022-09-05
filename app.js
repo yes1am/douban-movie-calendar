@@ -18,7 +18,7 @@ const sleep = (seconds) => {
 
 async function handlePage(page) {
   const start = page * 25;
-  const url = `https://www.douban.com/doulist/132007559/?start=${start}&sort=seq&playable=0&sub_type=`;
+  const url = `https://www.douban.com/doulist/147208859/?start=${start}&sort=seq&playable=0&sub_type=`;
   const response = await axios.get(url);
   const html = response.data;
   const $ = cheerio.load(html);
@@ -99,7 +99,7 @@ async function generateHtml(year, name) {
 async function main() {
   // 收集数据
   // const results = await handleMultiPage();
-  // fs.writeFileSync(path.join(__dirname, 'douban-movie-calendar-2021.json'), JSON.stringify(results, null, 2))
+  // fs.writeFileSync(path.join(__dirname, 'douban-movie-calendar-2022.json'), JSON.stringify(results, null, 2))
   // console.log('已写入文件，结束!');
 
   // 渲染页面
@@ -107,7 +107,8 @@ async function main() {
   await generateHtml(2018, '2018')
   await generateHtml(2019, '2019')
   await generateHtml(2020, '2020')
-  await generateHtml(2021, 'index')
+  await generateHtml(2021, '2021')
+  await generateHtml(2022, 'index')
   console.log('页面已生成');
 }
 

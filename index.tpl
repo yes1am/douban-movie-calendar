@@ -134,11 +134,20 @@
       <% } %>
       <% if (year === 2021) { %>
         <div class="menu-item active">
-          <a href="./index.html">2021</a>
+          <a href="./2021.html">2021</a>
         </div>
       <% } else { %>
         <div class="menu-item">
-          <a href="./index.html">2021</a>
+          <a href="./2021.html">2021</a>
+        </div>
+      <% } %>
+      <% if (year === 2022) { %>
+        <div class="menu-item active">
+          <a href="./index.html">2022</a>
+        </div>
+      <% } else { %>
+        <div class="menu-item">
+          <a href="./index.html">2022</a>
         </div>
       <% } %>
     </div>
