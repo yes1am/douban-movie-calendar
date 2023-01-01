@@ -96,60 +96,12 @@
 <body>
   <div class="container">
     <div class="menu-items">
-      <% if (year === 2017) { %>
-        <div class="menu-item active">
-          <a href="./2017.html">2017</a>
+      <% years.forEach(function(yearItem) { %>
+        <% const className = year === yearItem.name ? 'menu-item active' : 'menu-item'; %>
+        <div class="<%= className %>">
+          <a href="./<%= yearItem.href %>.html"><%= yearItem.name %></a>
         </div>
-      <% } else{ %>
-        <div class="menu-item">
-          <a href="./2017.html">2017</a>
-        </div>
-      <% } %>
-      <% if (year === 2018) { %>
-        <div class="menu-item active">
-          <a href="./2018.html">2018</a>
-        </div>
-      <% } else{ %>
-        <div class="menu-item">
-          <a href="./2018.html">2018</a>
-        </div>
-      <% } %>
-      <% if (year === 2019) { %>
-        <div class="menu-item active">
-          <a href="./2019.html">2019</a>
-        </div>
-      <% } else { %>
-        <div class="menu-item">
-          <a href="./2019.html">2019</a>
-        </div>
-      <% } %>
-      <% if (year === 2020) { %>
-        <div class="menu-item active">
-          <a href="./2020.html">2020</a>
-        </div>
-      <% } else { %>
-        <div class="menu-item">
-          <a href="./2020.html">2020</a>
-        </div>
-      <% } %>
-      <% if (year === 2021) { %>
-        <div class="menu-item active">
-          <a href="./2021.html">2021</a>
-        </div>
-      <% } else { %>
-        <div class="menu-item">
-          <a href="./2021.html">2021</a>
-        </div>
-      <% } %>
-      <% if (year === 2022) { %>
-        <div class="menu-item active">
-          <a href="./index.html">2022</a>
-        </div>
-      <% } else { %>
-        <div class="menu-item">
-          <a href="./index.html">2022</a>
-        </div>
-      <% } %>
+      <% }); %>
     </div>
     <div class="head-content">
       <%= title %>
