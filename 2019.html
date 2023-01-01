@@ -71,6 +71,7 @@
     }
     .menu-items {
       display: flex;
+      overflow-x: auto;
     }
     .menu-item {
       font-size: 13px;
