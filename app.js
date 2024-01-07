@@ -18,14 +18,14 @@ const sleep = (seconds) => {
 
 async function handlePage(page) {
   const start = page * 25;
-  const url = `https://www.douban.com/doulist/152759295/?start=${start}&sort=seq&playable=0&sub_type=`;
+  const url = `https://www.douban.com/doulist/156580671/?start=${start}&sort=seq&playable=0&sub_type=`;
   const response = await axios.get(url);
   const html = response.data;
   const $ = cheerio.load(html);
   const results = []
 
   const lists = $('.article .doulist-item');
-  if(lists.length) {
+  if (lists.length) {
     lists.map((index, item) => {
       item = $(item);
       /** 电影名称 */
@@ -36,25 +36,25 @@ async function handlePage(page) {
       let image = '';
       /** 电影评分 */
       let rating = ''
-  
+
       const titleLinkEle = item.find('.doulist-subject>.title>a');
-      if(titleLinkEle) {
+      if (titleLinkEle) {
         link = titleLinkEle.prop('href');
         title = titleLinkEle.text().trim();
       }
-  
+
       const imageEle = item.find('.doulist-subject>.post>a>img');
-      if(imageEle) {
+      if (imageEle) {
         image = imageEle.prop('src');
       }
-  
+
       const ratingNumsEle = item.find('.doulist-subject>.rating>.rating_nums')
-      if(ratingNumsEle) {
+      if (ratingNumsEle) {
         rating = ratingNumsEle.text().trim();
       }
-  
+
       const comment = item.find('.ft .comment').text()
-  
+
       results.push({
         title,
         link,
@@ -72,7 +72,7 @@ async function handleMultiPage() {
   let results = [];
   let i = 0;
   let hasMore = true;
-  while(hasMore) {
+  while (hasMore) {
     const pageResults = await handlePage(i);
     hasMore = !!pageResults.length
     results = results.concat(pageResults);
@@ -84,8 +84,8 @@ async function handleMultiPage() {
 }
 
 async function generateHtml(year, years) {
-  const tmpStr = fs.readFileSync('./index.tpl', { encoding: 'utf8'}).toString();
-  let movies = fs.readFileSync(`./douban-movie-calendar-${year.name}.json`, { encoding: 'utf8'})
+  const tmpStr = fs.readFileSync('./index.tpl', { encoding: 'utf8' }).toString();
+  let movies = fs.readFileSync(`./douban-movie-calendar-${year.name}.json`, { encoding: 'utf8' })
   movies = JSON.parse(movies);
   const html = ejs.render(tmpStr, {
     movies,
@@ -98,14 +98,14 @@ async function generateHtml(year, years) {
 }
 
 async function main() {
-  // 收集数据
+  // // 收集数据
   // const results = await handleMultiPage();
-  // fs.writeFileSync(path.join(__dirname, 'douban-movie-calendar-2023.json'), JSON.stringify(results, null, 2))
+  // fs.writeFileSync(path.join(__dirname, 'douban-movie-calendar-2024.json'), JSON.stringify(results, null, 2))
   // console.log('已写入文件，结束!');
 
-  
+
   // 渲染页面
-  let years = [2017, 2018, 2019, 2020, 2021, 2022, 2023]
+  let years = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
   years = years.map((year, index) => {
     const name = index === years.length - 1 ? 'index' : year
     return {
