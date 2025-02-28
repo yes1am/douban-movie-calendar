@@ -18,7 +18,7 @@ const sleep = (seconds) => {
 
 async function handlePage(page) {
   const start = page * 25;
-  const url = `https://www.douban.com/doulist/156580671/?start=${start}&sort=seq&playable=0&sub_type=`;
+  const url = `https://www.douban.com/doulist/160155208/?start=${start}&sort=seq&playable=0&sub_type=`;
   const response = await axios.get(url);
   const html = response.data;
   const $ = cheerio.load(html);
@@ -98,14 +98,14 @@ async function generateHtml(year, years) {
 }
 
 async function main() {
-  // // 收集数据
+  // 收集数据
   // const results = await handleMultiPage();
-  // fs.writeFileSync(path.join(__dirname, 'douban-movie-calendar-2024.json'), JSON.stringify(results, null, 2))
+  // fs.writeFileSync(path.join(__dirname, 'douban-movie-calendar-2025.json'), JSON.stringify(results, null, 2))
   // console.log('已写入文件，结束!');
 
 
   // 渲染页面
-  let years = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+  let years = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
   years = years.map((year, index) => {
     const name = index === years.length - 1 ? 'index' : year
     return {
